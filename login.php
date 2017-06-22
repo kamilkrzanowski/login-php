@@ -20,7 +20,7 @@
     $login = htmlentities($login, ENT_QUOTES, "UTF-8");
     $pass = htmlentities($pass, ENT_QUOTES, "UTF-8");
 
-    if ($result = @$connect->query(sprintf("SELECT * FROM uzytkownicy WHERE user='%s' AND pass='%s'", mysqli_real_escape_string($connect, $login), mysqli_real_escape_string($connect, $haslo)))) {
+    if ($result = @$connect->query(sprintf("SELECT * FROM uzytkownicy WHERE user='%s' AND pass='%s'", mysqli_real_escape_string($connect, $login), mysqli_real_escape_string($connect, $pass)))) {
       $ilu_userow = $result->num_rows;
       if ($ilu_userow>0) {
         $_SESSION['zalogowany'] = true;
